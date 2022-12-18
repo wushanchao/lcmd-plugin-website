@@ -1,0 +1,459 @@
+@font-face {
+  font-family: "Anyway Type";
+  src: url(calluna-sans-regular.woff) format("woff"),
+    url(calluna-sans-regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Anyway Serif";
+  src: url(https://s.anw.red/font/calluna-bold.woff) format("woff"),
+    url(https://s.anw.red/font/calluna-bold.eot) format("eot");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  background: #fff;
+  color: #333;
+  font-family: "Anyway Type", "PingFang SC", "Microsoft YaHei", sans-serif;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+::selection {
+  background: #ffe324;
+  color: #222;
+}
+ol {
+  list-style-position: inside;
+}
+.dumb-space {
+  letter-spacing: -0.13em;
+}
+@font-face {
+  font-family: "Title Serif";
+  src: url(https://s.anw.red/anyway.tab/source-han-serif-sc.eot);
+  src: url(https://s.anw.red/anyway.tab/source-han-serif-sc.eot?#font-spider)
+      format("embedded-opentype"),
+    url(https://s.anw.red/anyway.tab/source-han-serif-sc.woff) format("woff"),
+    url(https://s.anw.red/anyway.tab/source-han-serif-sc.ttf) format("truetype"),
+    url(https://s.anw.red/anyway.tab/source-han-serif-sc.svg) format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+.slide {
+  height: 90vh;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+.slide .inner {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 90vh;
+  clip: rect(auto, auto, auto, auto);
+  clip-path: inset(0 0 0 0);
+}
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 0.625rem;
+  z-index: 199;
+  background: #ffe324;
+}
+.slide-intro header {
+  position: absolute;
+}
+.logo {
+  position: absolute;
+  left: 11vw;
+  top: 0.6rem;
+}
+.logo a {
+  background: #ffe324;
+  display: block;
+}
+.logo a:hover {
+  background: #f3d822;
+}
+.logo img {
+  max-height: 7rem;
+}
+.title {
+  padding: 0 0 0 11vw;
+  width: 50vw;
+}
+h1 {
+  color: #444;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1.12;
+  font-family: "Anyway Serif", "Title Serif", "Source Han Serif SC", "Songti SC",
+    SimSun, serif;
+  -moz-font-feature-settings: "lnum";
+  -webkit-font-feature-settings: "lnum";
+  font-feature-settings: "lnum";
+}
+h1 a {
+  cursor: pointer;
+}
+.left-in,
+.right-in {
+  transition: all 0.5s cubic-bezier(0.7, 0, 0.1, 1) 0s;
+  display: block;
+  transform: translateX(-3rem);
+  opacity: 0;
+}
+.left-in.in-view {
+  transform: translateX(0);
+  opacity: 1;
+}
+.ani-2 {
+  transition-delay: 35ms;
+}
+.ani-3 {
+  transition-delay: 0.07s;
+}
+.ani-4 {
+  transition-delay: 0.08s;
+}
+.ani-5 {
+  transition-delay: 0.09s;
+}
+.ani-6 {
+  transition-delay: 0.1s;
+}
+.right-in {
+  transform: translateX(1rem);
+}
+.right-in.in-view {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-yellow h1 {
+  color: #222;
+}
+.slide-yellow a {
+  color: #222;
+}
+h2 {
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0.4em 0 0;
+}
+.title a {
+  display: inline-block;
+  position: relative;
+}
+.title a:after {
+  display: block;
+  content: "";
+  height: 0.25em;
+  background: #ffe324;
+  position: absolute;
+  width: 100%;
+  bottom: 0.05em;
+  z-index: -999;
+  left: 0;
+  transition: all 0.15s cubic-bezier(0.9, 0, 0.1, 1);
+}
+.slide-yellow a:after {
+  background: #fff;
+}
+@keyframes underline-in {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.title a:hover {
+  color: #111;
+}
+.title a:hover:after {
+  height: 94%;
+}
+.number {
+  background: #ffe324;
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  text-align: center;
+  border-radius: 0.6em;
+  position: absolute;
+  left: -1.5em;
+  top: -0.1em;
+  padding: 0.05em 0.1em 0.15em;
+  -moz-font-feature-settings: "tnum";
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "lnum";
+}
+.instructions {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin: 1em 0 0;
+  list-style: none;
+}
+.instructions .bullet {
+  margin: 0 0.3em 0 0;
+  font-weight: 700;
+  -moz-font-feature-settings: "tnum";
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+}
+.hero {
+  position: fixed;
+  display: block;
+  right: 0;
+  top: 5vh;
+  height: 80vh;
+  max-width: 50vw;
+}
+.hero img {
+  max-height: 100%;
+}
+.slide-intro .hero {
+  position: absolute;
+}
+.slide-yellow {
+  background: #ffe324;
+}
+.slide-intro h1 span {
+  position: relative;
+}
+.slide-intro h1 .square {
+  height: 0.5rem;
+  display: inline;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+.square:before {
+  position: absolute;
+  height: 0.5rem;
+  content: "";
+  bottom: 0;
+  width: 100vw;
+  background: #ffe324;
+  display: none;
+}
+.square-1:before {
+  right: 2rem;
+}
+.square-2:before {
+  left: 3rem;
+}
+.slide-faq .hero {
+  position: absolute;
+  right: none;
+  left: 50vw;
+  top: 20vh;
+  padding: 0;
+}
+.faq {
+  background: #fff;
+  font-size: 1rem;
+}
+dd:before,
+dt:before {
+  color: #222;
+  background: #ffe324;
+  width: 1em;
+  height: 1em;
+  font-weight: 700;
+  display: inline-block;
+  text-align: center;
+  padding: 0.4em;
+  line-height: 1;
+  border-radius: 1.1em;
+  margin: 0 0.5em 0 0;
+}
+dt:before {
+  content: "Q";
+}
+dd:before {
+  content: "A";
+  background: #eee;
+  color: #222;
+}
+dt {
+  margin: 1rem 0 0.3rem;
+  font-weight: 700;
+}
+dd {
+  margin-bottom: 1.6rem;
+  color: #777;
+  font-weight: 400;
+}
+dd a {
+  color: #777;
+  border-bottom: 0.15em solid #ffe324;
+  transition: all 0.15s cubic-bezier(0.9, 0, 0.1, 1);
+}
+dd a:hover {
+  color: #222;
+  background: #ffe324;
+  border-width: 0;
+}
+footer {
+  font-size: 0.875rem;
+  clear: both;
+  text-align: center;
+  background: #ffe324;
+  color: #222;
+}
+footer .inner {
+  padding: 2rem;
+}
+footer a {
+  color: #222;
+}
+#fullscreen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999;
+  background: #fff;
+  left: 0;
+  top: 0;
+  display: none;
+}
+#fullscreen .slide-intro {
+  background: #fff;
+}
+@media screen and (max-width: 1300px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .faq,
+  .instructions,
+  h2 {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (max-width: 1100px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .faq,
+  .instructions,
+  h2 {
+    font-size: 0.75rem;
+  }
+  .slide-faq .hero {
+    top: 25vh;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .slide {
+    height: auto;
+  }
+  .slide .inner {
+    position: static;
+    clip: none;
+    display: block;
+    height: auto;
+    padding: 1rem 0;
+  }
+  header {
+    display: none;
+  }
+  .hero {
+    position: static;
+    width: 100%;
+    max-width: none;
+    top: none;
+    right: none;
+    height: auto;
+    text-align: center;
+  }
+  .slide-intro .hero {
+    position: static;
+  }
+  .slide-faq .hero {
+    position: static;
+    right: none;
+    left: none;
+    top: none;
+  }
+  .hero img {
+    max-height: none;
+    max-width: 100%;
+  }
+  .title {
+    width: 100%;
+    padding: 0;
+    height: auto;
+    text-align: center;
+    margin: 4rem 0 0;
+  }
+  .faq,
+  .instructions {
+    text-align: left;
+    padding: 0 3rem;
+  }
+  .square:before {
+    display: none;
+  }
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.25;
+  }
+  .faq,
+  .instructions,
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .faq,
+  .instructions,
+  h2 {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  .faq,
+  .instructions,
+  h2 {
+    font-size: 0.75rem;
+  }
+}
