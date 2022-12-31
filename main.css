@@ -274,8 +274,11 @@ h2 {
   position: absolute;
   right: none;
   left: 50vw;
-  top: 20vh;
+  top: 0;
   padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .faq {
   background: #fff;
