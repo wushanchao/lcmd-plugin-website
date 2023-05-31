@@ -673,6 +673,10 @@
                         <p>1、&nbsp;建立公司的前端BFF体系</p>
                         <p>业务价值：方便不同业务项目复用后端微服务；方便后端专注业务通用功能开发；这个场景使用Node.js相对于JAVA有更高的开发效率和更好的性能。</p>
                         <p>技术方式：使用Egg.js和dubbo-js调用后端的dubbo接口，开放graphQL接口给前端调用。</p>
+                        <p>相关难点解决：
+                            <div>1、GraphQL查询语法和json有些相似又不一样，于是开发了一个json转换为GraphQL查询语句的npm包sam-gql-orm方便大家使用GraphQL查询。</div>
+                            <div>2、通过require-all包，把原先放在一块的超长dubbo配置（地址，服务名称，方法等等）解耦到目录文件约定的形式，方便多个的开发者并行写多个dubbo配置。</div>
+                            <div>3、修复dubbo-js重连机制问题。注册中心服务zk集群重启，导致dubbo-js客户端一直获取dubbo服务提供者，却一直得到为空。查看源码发现dubbo-js的zk客户端模块getChildren发生错误时，会直接返回空列表；node-zookeeper-client去无限重连。把这个返回空列表的代码移除掉就好和定时器移除掉重连逻辑就好。</div></p>
                         <p>项目角色：主导者。&nbsp;</p>
                         <p><br></p>
                         <p>2、&nbsp;前端移动端组件库设计和开发</p>
@@ -699,7 +703,7 @@
                         <p>项目角色：前端开发主导者。</p>
                         <p>由于历史原因采用Angular7进行业务开发。</p>
                         <p><br></p>
-                        <p>离职原因：业务优化。</p>
+                        <p>离职原因：所在业务线被撤除。</p>
                     </div>
                 </li>
                 <li class="work-exp_list">
@@ -759,7 +763,7 @@
                         <p>项目角色：</p>
                         <p>一人独立开发维护这个系统的前端页面，采用React+Reflux架构。</p>
                         <p>个人设计JSON Schema配置生成页面库，快速开发业务报表页面。<br /></p>
-                        <p>提供业务命令配置库，帮助业务方除了UI交互的方式，有另一种方式提供服务。</p>
+                        <p>提供业务命令配置库，通过指令的形式完成业务交互。具体详情请点击<a target="_blank" href="https://cmd.pub"><b>cmd.pub</b></a></p>
                         <img src="./img/payroll.png" alt="">
                         <p><br /></p>
                         <p>### i薪福系统</p>
