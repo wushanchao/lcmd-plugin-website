@@ -155,7 +155,7 @@
         }
 
         #container {
-            width: 720px;
+            width: 920px;
             margin: 50px auto 54px auto;
             border: 1px solid #e3ebe9;
             border-radius: 5px;
@@ -582,6 +582,9 @@
 
 
         /***** 图片作品 end ****/
+        .fayuanding img {
+            width: 32%;
+        }
     </style>
 </head>
 
@@ -674,9 +677,12 @@
                         <p>业务价值：方便不同业务项目复用后端微服务；方便后端专注业务通用功能开发；这个场景使用Node.js相对于Java有更高的开发效率和更好的性能。</p>
                         <p>技术方式：使用Egg.js和dubbo-js调用后端的dubbo接口，开放graphQL接口给前端调用。</p>
                         <p>相关难点解决：
-                            <div>- 开发sam-gql-orm的npm包。实现了json语法转换为GraphQL查询语法功能。降低GraphQL查询语法难写出错的概率。 </div>
-                            <div>- 引用require-all包，实现了超长dubbo配置（地址，服务名称，方法等等）解耦到目录文件，通过约定的形式方便多个的开发者并行写多个dubbo配置。</div>
-                            <div>- 修复dubbo-js重连机制问题。注册中心服务zk集群重启，导致dubbo-js客户端一直获取dubbo服务提供者，却一直得到为空。查看源码发现dubbo-js的zk客户端模块getChildren发生错误时，会直接返回空列表；node-zookeeper-client去无限重连。把这个返回空列表的代码移除掉就好和定时器移除掉重连逻辑就好。</div></p>
+                        <div>- 开发sam-gql-orm的npm包。实现了json语法转换为GraphQL查询语法功能。降低GraphQL查询语法难写出错的概率。 </div>
+                        <div>- 引用require-all包，实现了超长dubbo配置（地址，服务名称，方法等等）解耦到目录文件，通过约定的形式方便多个的开发者并行写多个dubbo配置。</div>
+                        <div>-
+                            修复dubbo-js重连机制问题。注册中心服务zk集群重启，导致dubbo-js客户端一直获取dubbo服务提供者，却一直得到为空。查看源码发现dubbo-js的zk客户端模块getChildren发生错误时，会直接返回空列表；node-zookeeper-client去无限重连。把这个返回空列表的代码移除掉就好和定时器移除掉重连逻辑就好。
+                        </div>
+                        </p>
                         <p>项目角色：主导者。&nbsp;</p>
                         <p><br></p>
                         <p>2、&nbsp;前端移动端组件库设计和开发</p>
@@ -687,21 +693,29 @@
                         <p>3、&nbsp;前端部分页面静态化</p>
                         <p>业务价值：对展示型页面进行html静态化。提高页面访问速度和稳定性。&nbsp;</p>
                         <p>项目角色：PM和前端开发主导者。</p>
-                        <p>技术方式：</p>
-                        <p>通过`ReactDOMServer.renderToString`方法生成html字符串，写入OSS，配置Nginx访问规则指向OSS。
-                        </p>
+                        <p>技术方式：通过`ReactDOMServer.renderToString`方法生成html字符串，写入OSS，配置Nginx访问规则指向OSS。</p>
                         <p><br></p>
                         <p>###&nbsp;业务支持</p>
-                        <p>1、&nbsp;法院钉钉工作平台开发</p>
+                        <p>1、&nbsp;法院钉互联网综合业务平台开发</p>
+                        <p>业务价值：为法院提供钉钉端（包括钉钉桌面端，钉钉桌面端侧边栏，专属钉）应用。将法院审判执行质效管理平台、执行办案、会议管理、公文流转、办公审批等等多个内外网系统与互联网综合业务平台进行了对接融合。
+                        </p>
+                        <p>技术方式：基于前端开发框架UmiJS和钉钉H5微应用开发。</p>
+                        <p>相关难点解决：
+                        <div>- 桌面端和移动端在一个项目中开发管理。</div>
+                        <div>- 通过动态import语法按需加载解决十几个应用在一个项目的打包体积过大和加载问题。</div>
+                        <div>- iOS和安卓适配问题。</div>
+                        <div>- 组件适配移动端和桌面侧边栏。</div>
+                        </p>
                         <p>项目角色：前端开发主导者。</p>
-                        <p>技术方式：</p>
-                        <p>基于umijs3.0框架开发。&nbsp;</p>
-                        <p>基于钉钉H5微应用开发。&nbsp;</p>
-                        <p>有丰富的钉钉H5页面开发经验</p>
+                        <div class="fayuanding">
+                            <img src="./img/fayuanding1.jpg" alt="">
+                            <img src="./img/fayuanding2.jpg" alt="">
+                            <img src="./img/fayuanding3.jpg" alt="">
+                        </div>
                         <p><br></p>
                         <p>2、&nbsp;互联网法院的当事人端和法官端的智慧审理业务开发。&nbsp;</p>
                         <p>项目角色：前端开发主导者。</p>
-                        <p>由于历史原因采用Angular7进行业务开发。</p>
+                        <p>技术方式：由于历史原因采用Angular7进行业务开发。</p>
                         <p><br></p>
                         <p>离职原因：所在业务线被撤除。</p>
                     </div>
@@ -763,7 +777,8 @@
                         <p>项目角色：</p>
                         <p>一人独立开发维护这个系统的前端页面，采用React+Reflux架构。</p>
                         <p>个人设计JSON Schema配置生成页面库，快速开发业务报表页面。<br /></p>
-                        <p>提供业务命令配置库，通过指令的形式完成业务交互。具体详情请点击<a target="_blank" href="https://cmd.pub"><b>cmd.pub</b></a></p>
+                        <p>提供业务命令配置库，通过指令的形式完成业务交互。具体详情请点击<a target="_blank" href="https://cmd.pub"><b>cmd.pub</b></a>
+                        </p>
                         <img src="./img/payroll.png" alt="">
                         <p><br /></p>
                         <p>### i薪福系统</p>
@@ -891,7 +906,7 @@
                 <li class="work-exp_list">
                     <p class="exp-list_time">2023</p>
                     <div class="exp-list_top">
-                        
+
                         <div class="exp-list_right">
                             <strong class="exp-list_title">
                                 <span>低命令（chrome扩展）</span>
@@ -912,7 +927,7 @@
                 <li class="work-exp_list">
                     <p class="exp-list_time">2021</p>
                     <div class="exp-list_top">
-                        
+
                         <div class="exp-list_right">
                             <strong class="exp-list_title">
                                 <span>趣控BMS（微信小程序）</span>
@@ -934,7 +949,7 @@
                 <li class="work-exp_list">
                     <p class="exp-list_time">2020</p>
                     <div class="exp-list_top">
-                        
+
                         <div class="exp-list_right">
                             <strong class="exp-list_title">
                                 <span>noon.com自动化改价工具</span>
@@ -952,7 +967,7 @@
                     </div>
                 </li>
             </ol>
-           
+
         </div>
 
         <!-- 项目经历 -->
